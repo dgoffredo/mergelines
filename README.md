@@ -62,7 +62,8 @@ for (potentially large) not-in-memory storage.
 Each input file first has empty lines removed from it; this runs in linear
 time.  Each file is then checked to see whether it's sorted; this also runs in
 linear time.  Finally, the sorted files are merged into the output; this also
-runs in linear time.  Thus, the time complexity of the algorithm is linear.
+runs in linear time.  Thus, the time complexity of the algorithm is linear in
+the combined size of all of the input files.
 
 ### Ways to Improve the Current Implementation
 The linear space requirement of `mergelines` is unfortunate, and it means that:
