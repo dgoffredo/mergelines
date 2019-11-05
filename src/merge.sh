@@ -2,7 +2,7 @@
 
 usage() {
     cat <<END_USAGE
-merge - merge unique lines from sorted text files in a directory
+mergelines - merge unique lines from sorted text files in a directory
 
 Usage:  $0 [options ...] <INPUT_DIRECTORY> <OUTPUT_FILE>
 
