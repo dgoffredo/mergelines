@@ -12,9 +12,8 @@ SORTIES = $(patsubst $(INDIR)/%, $(WORKDIR)/%, $(INPUTS))
 
 .PHONY: $(OUTPUT)
 $(OUTPUT): $(SORTIES)
-	@sort -u -o $(OUTPUT) $^ # merge/uniq the temporary files into the output
+	@sort --unique --merge --output=$(OUTPUT) $^ # merge/uniq temporary files
 
 $(WORKDIR)/%: $(INDIR)/%
-	@sed '/^\s*$$/d' $< > $@  # remove empty lines
-	@sort -c $@               # check that the input is sorted
-	@sort -u -o $@ $@         # sort/uniq the input into a temporary file
+	@sed '/^\s*$$/d' $< > $@       # remove empty lines into a temporary file
+	@sort --check $@               # check that the input is sorted
